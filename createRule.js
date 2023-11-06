@@ -9,8 +9,8 @@ module.exports.createRule = async (event) => {
 
     const params = {
         Name: "DEMO_EVENT",
-        // RoleArn: "",
-        ScheduleExpression: "rate(1 minute)",
+        RoleArn: "arn:aws:iam::737588548235:role/DemoScheduleEventRole",
+        ScheduleExpression: "rate(1 minute)", //cron(1 * * * ? *)
         State: "ENABLED",
     }
 
@@ -21,14 +21,14 @@ module.exports.createRule = async (event) => {
         return {
             statusCode: 200,
             body: JSON.stringify(
-              {
-                message: 'Rule created!',
-                input: event,
-              },
-              null,
-              2
+                {
+                    message: 'Rule created!',
+                    input: event,
+                },
+                null,
+                2
             ),
-          };
+        };
     } catch (error) {
         console.log('Error:', error)
     }

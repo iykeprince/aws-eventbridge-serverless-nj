@@ -1,12 +1,14 @@
 'use strict';
 
 const { createRule } = require("./createRule");
+const { createSchedule } = require("./createSchedule");
 const { disableRule } = require("./disableRule");
 const { putTarget } = require("./putTarget");
 
 module.exports.createRule = createRule
 module.exports.putTarget = putTarget
 module.exports.disableRule = disableRule
+module.exports.createSchedule = createSchedule
 
 module.exports.hello = async (event) => {
   return {
